@@ -1,0 +1,77 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cipher Hub - Futuristic Cipher Tool</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <h2>Cipher Hub</h2>
+      <div class="mode-toggle">
+        <button id="mode-toggle">🌙 / ☀️</button>
+      </div>
+      <ul class="nav-list">
+        <li class="category">Classical Substitution</li>
+        <ul>
+          <li data-cipher="caesar">Caesar</li>
+          <li data-cipher="rot13">ROT13</li>
+          <li data-cipher="atbash">Atbash</li>
+          <li data-cipher="simple-sub">Simple Substitution</li>
+          <li data-cipher="vigenere">Vigenère</li>
+          <li data-cipher="playfair">Playfair</li>
+          <li data-cipher="hill">Hill</li>
+        </ul>
+        <li class="category">Transposition</li>
+        <ul>
+          <li data-cipher="rail-fence">Rail Fence</li>
+          <li data-cipher="columnar">Columnar Transposition</li>
+        </ul>
+        <li class="category">Mechanical</li>
+        <ul>
+          <li data-cipher="enigma">Enigma (Basic)</li>
+          <li data-cipher="lorenz">Lorenz (Simplified)</li>
+        </ul>
+        <li class="category">Modern</li>
+        <ul>
+          <li data-cipher="xor">Stream Cipher (XOR)</li>
+          <li data-cipher="aes">AES (Block)</li>
+          <li data-cipher="rsa">RSA</li>
+        </ul>
+      </ul>
+    </nav>
+    <main class="dashboard">
+      <div class="card input-card">
+        <textarea id="input-text" placeholder="Enter text here..."></textarea>
+      </div>
+      <div class="controls">
+        <select id="cipher-select">
+          <option>Select Cipher</option>
+        </select>
+        <div id="key-input-container" style="display: none;">
+          <input id="key-input" type="text" placeholder="Enter key...">
+        </div>
+        <button id="encrypt-btn">Encrypt 🔒</button>
+        <button id="decrypt-btn">Decrypt 🔓</button>
+        <button id="clear-btn">Clear</button>
+      </div>
+      <div class="card output-card">
+        <textarea id="output-text" placeholder="Output will appear here..." readonly></textarea>
+        <button id="copy-btn">Copy 📋</button>
+      </div>
+      <div class="history-panel">
+        <h3>History</h3>
+        <div id="history-list"></div>
+      </div>
+    </main>
+  </div>
+  <footer class="footer">
+    <p>Created for encryption and decryption</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
